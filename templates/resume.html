@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ resume.name }} - Resume</title>
+</head>
+<body>
+    <h1>{{ resume.name }}</h1>
+    <h2>{{ resume.title }}</h2>
+
+    <h3>Education</h3>
+    <p>{{ resume.education }}</p>
+
+    <h3>Experience</h3>
+    <ul>
+        {% for exp in resume.experience %}
+            <li>{{ exp.position }} at {{ exp.company }} ({{ exp.year }})</li>
+        {% endfor %}
+    </ul>
+
+    <h3>Skills</h3>
+    <ul>
+        {% for skill in resume.skills %}
+            <li>{{ skill }}</li>
+        {% endfor %}
+    </ul>
+
+    <h3>Contact</h3>
+    <ul>
+        <li>Email: {{ resume.contact.email }}</li>
+        <li>Phone: {{ resume.contact.phone }}</li>
+        <li>GitHub: {{ resume.contact.github }}</li>
+        <li>LinkedIn: {{ resume.contact.linkedin }}</li>
+    </ul>
+</body>
+</html>
+
